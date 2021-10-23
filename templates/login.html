@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block contenido %}
+        <form name='login' id='login' action='/' method='POST'>
+            <div class='login'>
+                <div class='fila'>
+                    <div class='c3'>{{ prueba.usu.label }}</div>
+                    <div class='c7'>{{ prueba.usu(size=40, minlength=5, maxlength=40) }}</div>
+                </div>
+                <div class='fila'>
+                    <div class='c3'>{{ prueba.cla.label }}</div>
+                    <div class='c7'>{{ prueba.cla(size=40, minlength=5, maxlength=40) }}</div>
+                </div>
+                <div class='fila'><br /><hr /><br /></div>
+                <div class='fila'>
+                    <div class='c8'>&nbsp;</div>
+                    <div class='c2'>{{ prueba.btn() }}</div>
+                </div>
+                {% for msg in get_flashed_messages() %}
+                <div class='fila'>{{ msg }}</div>
+                {% endfor %}
+            </div>
+        </form>
+{% endblock %}

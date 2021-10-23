@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CP12 :: Uso de Bases de Datos</title>
+        <link rel='stylesheet' type='text/css' href='{{ url_for("static", filename="css/estilo45.css") }}' />
+    </head>
+    <body>
+       <nav>
+           <div class='fila menu'>
+               {% if 'usr' in session %}
+               <div><a href='/logout/'>Salir</a></div>
+               <div><a href='/send/'>Enviar mensaje</a></div>
+               {% else %}
+               <div><a href='/'>Inicio</a></div>
+               <div><a href='/register/'>Registro</a></div>
+               <div><a href='/downloadimg/'>Descargar imagen</a></div>
+               <div><a href='/downloadpdf/'>Descargar PDF</a></div>
+               {% endif %}
+           </div>
+           <h1>{{ titulo }}</h1>
+           {% block contenido %}{% endblock %}
+       </nav> 
+    </body>
+</html>

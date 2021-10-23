@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block contenido %}
+        <div class='mensajes'>
+            <div class='fila'>
+                <div class='c2'>DE</div>
+                <div class='c2'>ASUNTO</div>
+                <div class='c6'>MENSAJE</div>
+            </div>
+            {% for dat in messages %}
+            <div class='fila border blue'>
+                <div class='c2'>{{ dat[0] }}</div>
+                <div class='c2'>{{ dat[2] }}</div>
+                <div class='c6'>{{ dat[3] }}</div>
+            </div>
+            {% endfor %}
+            <form action='/logout/' method='GET' name='salir' id='salir'>
+                <div class='fila'><br /><hr /><br /></div>
+                <div class='fila'>
+                    <div class='c8'>&nbsp;</div>
+                    <div class='c2'><input type='submit' name='salbtn' id='salbtn' value='salir' /></div>
+                </div>
+            </form>
+        </div>
+{% endblock %}

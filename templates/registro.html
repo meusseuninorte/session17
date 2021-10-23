@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block contenido %}
+        <form name='registro' id='registro' action='/register/' method='POST'>
+            <div class='login'>
+                <div class='fila'>
+                    <div class='c2'>{{ prueba.nom.label }}</div>
+                    <div class='c8'>{{ prueba.nom(size=100, minlength=1, maxlength=100) }}</div>
+                </div>
+                <div class='fila'>
+                    <div class='c2'>{{ prueba.usu.label }}</div>
+                    <div class='c3'>{{ prueba.usu(size=40, minlength=5, maxlength=40) }}</div>
+                </div>
+                <div class='fila'>
+                    <div class='c2'>{{ prueba.ema.label }}</div>
+                    <div class='c8'>{{ prueba.ema(size=100, minlength=3, maxlength=100) }}</div>
+                </div>
+                <div class='fila'>
+                    <div class='c2'>{{ prueba.cla.label }}</div>
+                    <div class='c3'>{{ prueba.cla(size=40, minlength=5, maxlength=40) }}</div>
+                    <div class='c2'>{{ prueba.ver.label }}</div>
+                    <div class='c3'>{{ prueba.ver(size=40, minlength=5, maxlength=40) }}</div>
+                </div>
+                <div class='fila'><br /><hr /><br /></div>
+                <div class='fila'>
+                    <div class='c8'>&nbsp;</div>
+                    <div class='c2'>{{ prueba.btn() }}</div>
+                </div>
+                {% for msg in get_flashed_messages() %}
+                <div class='fila'>{{ msg }}</div>
+                {% endfor %}
+            </div>
+        </form>
+{% endblock %}
